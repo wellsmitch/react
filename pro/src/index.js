@@ -29,7 +29,7 @@ ReactDOM.render(
     <Router history={hasHistory}>
         <Route path='/' component={App}>
             <IndexRoute component={Home}></IndexRoute>
-            <Redirect from='/home' to='/other'/>
+            {/*<Redirect from='/home' to='/other'/>*/}
             {/*点击home 跳转到 other*/}
             {/*<IndexRedirect to='/about'/>*/}
             {/*IndexRedirect 首屏数据的展示*/}

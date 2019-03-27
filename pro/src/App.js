@@ -11,7 +11,7 @@ class App extends Component {
       <div className="App">
           <h1>hello world</h1>
           <Link to='/home' activeStyle={asstyle}>首页</Link>
-          {/*//home中的斜杠不加路径会变成/home/about*/}
+          {/* //home中的斜杠不加路径会变成/home/about */}
           <Link to='/about' activeStyle={asstyle}>关于</Link>
           <Link to='/other' activeStyle={asstyle}>其他</Link>
           <Link to='/query' activeStyle={asstyle}>query</Link>

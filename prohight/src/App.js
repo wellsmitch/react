@@ -4,7 +4,7 @@ import { BrowserRouter as Router , Route ,Link ,Redirect,Switch} from 'react-rou
 import Home from './components1/home'
 import About from './components1/about'
 import Other from './components1/other'
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render() {
@@ -19,11 +19,15 @@ class App extends Component {
               <Link to='/home'>首页</Link>
               <Link to='/about'>关于</Link>
               <Link to='/other'>其他</Link>
+              {/*Switch 用于解决Redirect产生的红色警告*/}
               <Switch>
-                  <Route path='/home' component={Home}></Route>
+                  <Route path='/home' component={Home}>
+
+                  </Route>
                   <Route path='/about' component={About}></Route>
                   <Route path='/other' component={Other}></Route>
-                  <Redirect to='/home' />
+                  <Route path='/' component={Home}></Route>
+                  {/*<Redirect to='/about' />*/}
               </Switch>
 
           </div>

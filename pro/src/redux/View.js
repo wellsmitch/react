@@ -8,16 +8,19 @@ class Demo1 extends React.Component{
         this.state = {
             str:Store.getState()
         };
+        console.log(this)
         this.itemchange = this.itemchange.bind(this)
     }
     itemchange(){
-        var data = Store.getState();
-        this.setState({str:data})
+        console.log(this)
+         var data = Store.getState();
+         this.setState({str:data})
     }
     componentDidMount(){
         Store.subscribe(this.itemchange)
     }
     tap(){
+        console.log(this)
         Store.dispatch(Action(this.refs.ipt.value))
     }
     render(){

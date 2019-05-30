@@ -21,11 +21,11 @@ class App extends Component {
               <Link to='/other'>其他</Link>
               {/*Switch 用于解决Redirect产生的红色警告*/}
               <Switch>
-                  <Route path='/home' component={Home}>
-
-                  </Route>
-                  <Route path='/about' component={About}></Route>
-                  <Route path='/other' component={Other}></Route>
+                  <Home path='/home' />
+                  {/*如果使用下面的会出现一个警告 index.js:1437 Warning: Failed prop type: Invalid prop `component` of type `object` supplied to `Route`, expected `function`.*/}
+                  {/*<Route path='/home' component={Home} />*/}
+                  <Route path='/about' component={About} />
+                  <Route path='/other' component={Other} />
                   {/*<Route path='/' component={Home}></Route>*/}
                   {/*输入的路径不存在时候会重定向到about的页面中*/}
                   <Redirect to='/about' />

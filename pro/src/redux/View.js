@@ -20,7 +20,7 @@ class Demo1 extends React.Component{
         Store.subscribe(this.itemchange)
     }
     tap(){
-        console.log(this)
+        console.log(this);
         Store.dispatch(Action(this.refs.ipt.value))
     }
     render(){
@@ -28,7 +28,7 @@ class Demo1 extends React.Component{
             <div>
                 <h1>redux</h1>
                 <input type="text" ref='ipt'/>
-                <button onClick={this.tap.bind(this)}>添加</button>
+                <button onClick={this.tap.bind(this)}>添加r</button>
                 <hr/>
                 {
                     this.state.str.map(function (item,i) {

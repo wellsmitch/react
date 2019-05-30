@@ -52,7 +52,7 @@ class Home extends React.Component{
                         this.state.arr.map((item,i)=>{
                             return(
                                 <div key={i}>
-                                    <Link to={{pathname:'/detail',query:{id:item.pid}}}> {item.pname} </Link>
+                                    <Link to={{pathname:'/detail',state:{id:item.pid}}}> {item.pname} </Link>
                                 </div>
                             )
                         })

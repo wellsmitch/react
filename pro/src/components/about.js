@@ -4,13 +4,14 @@ import Store from '../redux/Store'
 
 class About extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             str:Store.getState()
         };
     }
 tap(){
-    hashHistory.push('/other')
+    this.props.history.push({ pathname: "/other", query: {id: '456789'}});
+    // hashHistory.push({ pathname: "/other", query: {id: '456789'} })
 }
     render(){
         return(

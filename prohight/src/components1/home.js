@@ -4,7 +4,6 @@ import s from '../33.jpeg'
 import {  bindActionCreators  } from 'redux'
 import { connect } from 'react-redux'
 import {addm} from '../action/action'
-import {doStart} from "../reducers/add";
 
 class Home extends Component {
     constructor(props) {
@@ -28,7 +27,7 @@ class Home extends Component {
     }
 
     render() {
-        const word = 'is good';
+        // const word = 'is good';
         console.log(this.props);
         console.log('00');
         return (

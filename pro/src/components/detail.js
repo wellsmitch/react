@@ -20,6 +20,7 @@ class Detail extends React.Component{
         )
     }
     componentDidMount(){
+
         var _this = this;
         // $.ajax({
         //     url:'http://jx.xuzhixiang.top/ap/api/detail.php',
@@ -49,6 +50,7 @@ class Detail extends React.Component{
         });
     }
     componentWillReceiveProps(a){
+        console.log(a)
         var _this = this;
         // $.ajax({
         //     url:'http://jx.xuzhixiang.top/ap/api/detail.php',

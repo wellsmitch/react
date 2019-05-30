@@ -15,6 +15,7 @@ class App extends Component {
           <Link to='/about' activeStyle={asstyle}>关于</Link>
           <Link to='/other' activeStyle={asstyle}>其他</Link>
           <Link to='/query' activeStyle={asstyle}>query</Link>
+          <Link to='/Demo11' activeStyle={asstyle}>Demo11</Link>
           <div>
               {this.props.children}
           </div>

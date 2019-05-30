@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import $ from 'jquery';
 import s from '../33.jpeg'
+import {  bindActionCreators  } from 'redux'
+import { connect } from 'react-redux'
+import {addm} from '../action/action'
+import {doStart} from "../reducers/add";
 
-
-class Home extends React.Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,12 +22,19 @@ class Home extends React.Component {
         }
     }
 
+    additem() {
+        console.log(333);
+        this.props.additem1()
+    }
 
     render() {
-        const word = 'is good'
+        const word = 'is good';
+        console.log(this.props);
+        console.log('00');
         return (
             <div>
                 <h1 className={'d'}>首页</h1>
+                <button onClick={this.additem.bind(this)}>+</button>
                 <img style={this.state.s} src={s} alt=""/>
                 <p>{this.bg}</p>
                 <div style={this.state.bg}>fffffffffffffff</div>
@@ -48,6 +58,17 @@ class Home extends React.Component {
 
     }
 }
+let mapStateToProps = (state) =>{
+    console.log(state);
+    return {
+        con:state.doStart.state
+    }
+};
 
+let mapDispatchToProps = (dispatch)=>{
+    return {
+        additem1: bindActionCreators(addm, dispatch)
+    }
+};
 
-export default Home
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

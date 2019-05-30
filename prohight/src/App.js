@@ -26,8 +26,9 @@ class App extends Component {
                   </Route>
                   <Route path='/about' component={About}></Route>
                   <Route path='/other' component={Other}></Route>
-                  <Route path='/' component={Home}></Route>
-                  {/*<Redirect to='/about' />*/}
+                  {/*<Route path='/' component={Home}></Route>*/}
+                  {/*输入的路径不存在时候会重定向到about的页面中*/}
+                  <Redirect to='/about' />
               </Switch>
 
           </div>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Detail from './detail'
+import Other from './other'
 
-class About extends React.Component{
+class About extends Component{
     constructor(props){
-        super(props)
+        super(props);
+       // this.tap = this.tap.bind(this)
         this.state = {
             arr:[],
             arr2:[
@@ -42,8 +44,10 @@ class About extends React.Component{
         }
     }
 tap(){
+    // https://blog.csdn.net/baidu_38027860/article/details/82888974
     // 编程式路由跳转
-    this.props.history.push('/other')
+    this.props.history.push({ pathname: "/other", state: {id: '456789'} });
+    // this.props.history.push({pathname:'/other',query:{id:456789}})
 }
     render(){
         return(
@@ -54,6 +58,8 @@ tap(){
                 <hr/>
                 <Router>
                 <div>
+                    <Link to={{pathname:'/other',query:{id:'ssssss'}}}> 跳转到other </Link>
+                    <Route path='/other' component={Other}></Route>
                     {
                         this.state.arr2.map((item,i)=>{
                             return(

@@ -1,5 +1,5 @@
-import {take, call, put} from 'redux-saga/effects'
-import {actionType} from '../actionType/actionType'
+import { take, call, put } from 'redux-saga/effects'
+import { actionType } from '../actionType/actionType'
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 export function *add_delay() {
   try {

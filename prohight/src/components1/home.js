@@ -3,7 +3,7 @@ import $ from 'jquery';
 import s from '../33.jpeg'
 import {  bindActionCreators  } from 'redux'
 import { connect } from 'react-redux'
-import {addm} from '../action/action'
+import { addm } from '../action/action'
 
 class Home extends Component {
     constructor(props) {
@@ -17,13 +17,14 @@ class Home extends Component {
             },
             s:{
                 width:'100px',height:'100px'
-            }
+            },
+            con:0,
         }
     }
 
-    additem() {
+    additem(a) {
         console.log(333);
-        this.props.additem1()
+        this.props.additem1(a)
     }
 
     render() {
@@ -31,13 +32,15 @@ class Home extends Component {
         console.log(this.props);
         console.log('00');
         return (
-            <div>
-                <h1 className={'d'}>首页</h1>
-                <button onClick={this.additem.bind(this)}>+</button>
+            <React.Fragment>
+                {/*<React.Fragment> == <div> == <>*/}
+                <h1 className={'d'}>首页1</h1>
+                <button onClick={(e)=>{this.additem(67892)}}>+</button>
                 <img style={this.state.s} src={s} alt=""/>
                 <p>{this.bg}</p>
                 <div style={this.state.bg}>fffffffffffffff</div>
-            </div>
+                <h1>{this.state.con}</h1>
+            </React.Fragment>
 
         )
     }
@@ -62,6 +65,8 @@ let mapStateToProps = (state) =>{
     return {
         con:state.doStart.state
     }
+
+
 };
 
 let mapDispatchToProps = (dispatch)=>{

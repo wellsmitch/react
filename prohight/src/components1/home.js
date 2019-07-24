@@ -29,8 +29,7 @@ class Home extends Component {
 
     render() {
         // const word = 'is good';
-        console.log(this.props);
-        console.log('00');
+        const { con } = this.props;
         return (
             <React.Fragment>
                 {/*<React.Fragment> == <div> == <>*/}
@@ -39,9 +38,8 @@ class Home extends Component {
                 <img style={this.state.s} src={s} alt=""/>
                 <p>{this.bg}</p>
                 <div style={this.state.bg}>fffffffffffffff</div>
-                <h1>{this.state.con}</h1>
+                <h1>{con}</h1>
             </React.Fragment>
-
         )
     }
 
@@ -63,7 +61,7 @@ class Home extends Component {
 let mapStateToProps = (state) =>{
     console.log(state);
     return {
-        con:state.doStart.state
+        con:state.doStart.a
     }
 
 

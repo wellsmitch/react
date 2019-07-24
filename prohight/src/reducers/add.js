@@ -4,8 +4,15 @@ const initialState = {
     a: 0
 };
 
+// function e(s) {
+//     return s
+// }
+var e = (s) =>s;
+
+
+
 export function doStart (state =initialState, action) {
-    console.log(state,{...state},action.type, action, '--------');
+    console.log(state, '--------');//{...state},action.type, action,
     switch (action.type) {
         case 'DO_ADD_':
             state.a++;

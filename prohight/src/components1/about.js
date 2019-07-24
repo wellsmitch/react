@@ -1,8 +1,33 @@
 import React, {Component} from 'react';
 import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import Detail from './detail'
+import Media from 'react-media';
 import Other from './other'
 
+const query = {
+    'screen-xs': {
+        maxWidth: 575,
+    },
+    'screen-sm': {
+        minWidth: 576,
+        maxWidth: 767,
+    },
+    'screen-md': {
+        minWidth: 768,
+        maxWidth: 991,
+    },
+    'screen-lg': {
+        minWidth: 992,
+        maxWidth: 1199,
+    },
+    'screen-xl': {
+        minWidth: 1200,
+        maxWidth: 1599,
+    },
+    'screen-xxl': {
+        minWidth: 1600,
+    },
+};
 class About extends Component{
     constructor(props){
         super(props);
@@ -54,7 +79,17 @@ tap(){
             <div>
                 <div>关于</div>
                 <button onClick={this.tap.bind(this)}>跳转到other</button>
-
+                <div>
+                    <Media query="(max-width: 599px)">
+                        {matches =>
+                            matches ? (
+                                <p>The document is less than 600px wide.</p>
+                            ) : (
+                                <p>The document is at least 600px wide.</p>
+                            )
+                        }
+                    </Media>
+                </div>
                 <hr/>
                 <Router>
                 <div>
